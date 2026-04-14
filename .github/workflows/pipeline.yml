@@ -1,0 +1,39 @@
+name: "Estrutura de diretorios e arquivos"
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    
+env:
+  NODE_VERSION: '18'
+
+jobs:
+    demontrando-estrutura:
+      name: "TESTE"
+      runs-on: ubuntu:latest
+
+      steps:
+        - name: Checkout do Codigo
+        uses: actions/checkout@v4
+
+        - name: Mostrar estrutura do .github/workflows
+          run: 
+            echo " == Estrutura de Diretorios e Arquivos .github/workflows == "
+            ls -la .github/workflows
+            echo ""
+            echo "Total de Workflows $(ls -l .githib/workflows | wc -l) "
+        
+          - name: Elementos obrigatorios
+            run: |
+            echo "TESTE"
+        
+          - name: Variaveis e Contexto
+          run: |
+            echo " ==VARIAVEIS e CONTEXTO"
+
+    
+  
+
+
+

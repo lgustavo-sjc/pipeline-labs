@@ -3,32 +3,36 @@ name: "Estrutura de Diretórios e Arquivos - Parte 2"
 on:
   push:
     branches: [ main ]
-    paths-ignore:
-      - '.github/workflows/**'  # Executa apenas se houver alterações nos workflows
+#   paths-ignore:
+#     - '.github/workflows/**'  # Executa apenas se houver alterações nos workflows
   workflow_dispatch:
     inputs:
       environment:
         description: 'Escolha o ambiente de execução'
         required: true
-        default: 'production'
+        default: 'prod'
         type: choice
         options:
-          - production
+          - prod
           - staging
           - development
-  schedule:
-    - cron: '*/30 * * * *'
+  #schedule:
+  #  - cron: '*/30 * * * *'
 env:
     NODE_VERSION: '18'
 
 jobs:
   demonstrar-estrutura-parte2:
     name: "Demonstrar Estrutura - Parte 2"
-    runs-on: ubuntu-24.04
-
+    runs-on: ubuntu-24.04    
+    
     steps:
       - name: Checkout do código
         uses: actions/checkout@v5
+
+      - name: Mostrar URL
+        run: |
+          echo "Nome da URL: ${{vars.URL}}"
       
       - name: Mostrar estrutura .github/workflows
         run: |

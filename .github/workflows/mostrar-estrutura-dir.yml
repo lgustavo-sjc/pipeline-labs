@@ -6,6 +6,16 @@ on:
     paths-ignore:
       - '.github/workflows/**'  # Executa apenas se houver alterações nos workflows
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Escolha o ambiente de execução'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+          - production
+          - staging
+          - development
   schedule:
     - cron: '*/30 * * * *'
 env:

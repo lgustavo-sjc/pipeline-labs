@@ -6,7 +6,8 @@ on:
     paths-ignore:
       - '.github/workflows/**'  # Executa apenas se houver alterações nos workflows
   workflow_dispatch:
-
+  schedule:
+    - cron: '*/30 * * * *'
 env:
     NODE_VERSION: '18'
 

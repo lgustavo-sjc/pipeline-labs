@@ -11,7 +11,7 @@ env:
 jobs:
   demonstrar-estrutura-parte2:
     name: "Demonstrar Estrutura - Parte 2"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout do código

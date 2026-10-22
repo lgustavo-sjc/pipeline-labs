@@ -3,6 +3,8 @@ name: "Estrutura de Diretórios e Arquivos - Parte 2"
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - '.github/workflows/**'  # Executa apenas se houver alterações nos workflows
   workflow_dispatch:
 
 env:

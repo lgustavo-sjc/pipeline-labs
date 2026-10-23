@@ -1,4 +1,4 @@
-name: "Lab 01 - Estrutura de Diretórios e Arquivos"
+name: "Scheduler Workflow"
 
 on: 
   schedule:
@@ -9,7 +9,7 @@ on:
 
 jobs:
   run-scheduler:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04 
     steps:
       - name: Checkout do código
         uses: actions/checkout@v4
